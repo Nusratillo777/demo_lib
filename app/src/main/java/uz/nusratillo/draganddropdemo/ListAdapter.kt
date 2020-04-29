@@ -9,9 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_list.view.*
 
-class ListAdapter(
-    private val listener: MotionChangeListener
-) : RecyclerView.Adapter<ListAdapter.ViewHolder>(), View.OnTouchListener {
+class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>(), View.OnTouchListener {
 
     private val data = mutableListOf<String>()
 
@@ -45,7 +43,6 @@ class ListAdapter(
         }
         return false
     }
-
 
 
     fun addData(list: List<String>) {

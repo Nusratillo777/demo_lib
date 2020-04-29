@@ -5,9 +5,7 @@ import android.view.*
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_main.view.*
 
-class MainAdapter(
-    private val listener: MotionChangeListener
-) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater
@@ -22,7 +20,8 @@ class MainAdapter(
         layoutParam.marginEnd = (8 * context.resources.displayMetrics.density).toInt()
         layoutParam.marginStart = (8 * context.resources.displayMetrics.density).toInt()
         view.layoutParams = layoutParam
-
+        view.scaleX = 0.7f
+        view.scaleY = 0.7f
         return ViewHolder(view)
     }
 
@@ -35,7 +34,7 @@ class MainAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun onBind() {
-            val adapter = ListAdapter(listener)
+            val adapter = ListAdapter()
             adapter.addData(
                 listOf(
                     "A",
